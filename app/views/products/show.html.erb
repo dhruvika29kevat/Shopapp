@@ -1,2 +1,18 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+<% @products.each do |product| %>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <p>
+                <%= product.discription %>
+            </p>
+            <p>
+                <small> SGD</small>
+                <%= product.price %>
+            </p>
+        </div>
+        <div class="card-footer">
+            <%= link_to 'Back to Product List', products_path %>
+        </div>
+    </div>
+</div>
+<% end %>
