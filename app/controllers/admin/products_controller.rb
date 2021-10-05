@@ -1,7 +1,7 @@
 class Admin::ProductsController < ApplicationController
 
     before_action :authenticate_admin!
-  
+    
     def index
       @products = Product.all
     end
@@ -11,8 +11,8 @@ class Admin::ProductsController < ApplicationController
     end
   
     def create
-
       @product = Product.new(product_params)
+      @product.avatar.attach(params[:avatar])
 
       if @product.save
         @category_array = params.dig(:product, :category_ids)
@@ -53,7 +53,7 @@ class Admin::ProductsController < ApplicationController
       flash[:notice] = "Product removed!"
       redirect_to admin_products_path
     end
-  
+
     private
   
       def product_params

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # get 'categories/show'
   # get 'products/index'
   # get 'products/show'
+  
+  get '/search', to: "products#search"
 
   root to: 'products#index'
   resources :products, only: [:index, :show]
