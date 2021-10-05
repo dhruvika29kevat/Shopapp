@@ -7,13 +7,16 @@
             </p>
             <p>
                 <small> SGD</small>
-                <%= product.price %>
+                <%= number_to_currency(@product.price) %>
             </p>
         </div>
         <%= link_to 'Add to Cart', add_to_cart_path(@product), method: :put %>
         <div class="card-footer">
-            <%= link_to 'Back to Product List', products_path %>
+            <% if product.avatar.attached? %>
+                <%= image_tag url_for(product.avatar), :size => "200x360" %>
+            <% end %>
         </div>
     </div>
 </div>
 <% end %>
+<%= link_to 'Back to Product List', products_path %>

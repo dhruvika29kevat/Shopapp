@@ -11,7 +11,9 @@ class Admin::ProductsController < ApplicationController
     end
   
     def create
+
       @product = Product.new(product_params)
+
       if @product.save
         @category_array = params.dig(:product, :category_ids)
         @category_array.each do |cat|
@@ -55,7 +57,7 @@ class Admin::ProductsController < ApplicationController
     private
   
       def product_params
-        params.require(:product).permit(:name, :description, :price)
+        params.require(:product).permit(:name, :description, :price, :avatar)
       end
   
   end

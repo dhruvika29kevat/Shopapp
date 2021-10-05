@@ -30,6 +30,9 @@
                         <%= product.price * qty.to_i %>
                     </td>
                     <td class="align-middle">
+                        <%= image_tag url_for(product.avatar), :size => "100x260" %>
+                    </td>
+                    <td class="align-middle">
                         <%= link_to '+', add_to_cart_path(product), method: :put, class: "btn" %>
                         <%= link_to '-', remove_one_cart_path(product), method: :put, class: "btn" %>
                         <%= link_to 'Remove', remove_from_cart_path(product), method: :put, class: "btn btn-danger" %>
