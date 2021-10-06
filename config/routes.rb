@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # get 'products/show'
   
   get '/search', to: "products#search"
-
+  get '/admin/categories/search', to: 'categories#search'
   root to: 'products#index'
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
