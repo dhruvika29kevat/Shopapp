@@ -2,18 +2,21 @@
 <div class="container">
     <div class="card">
         <div class="card-body">
+            <div style="text-decoration: underline;">
+                <p><%= product.name %></p>
+            </div>
             <p>
                 <%= product.description %>
             </p>
             <p>
                 <small> SGD</small>
-                <%= number_to_currency(@product.price) %>
+                <%= number_to_currency(product.price) %>
             </p>
         </div>
         <%= link_to 'Add to Cart', add_to_cart_path(@product), method: :put %>
         <div class="card-footer">
-            <% if product.avatar.attached? %>
-                <%= image_tag url_for(product.avatar), :size => "200x360" %>
+            <% product.avatar.each do |file| %>
+                <%= image_tag(product.avatar) %>
             <% end %>
         </div>
     </div>

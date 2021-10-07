@@ -1,11 +1,12 @@
 <% @products.each do |product| %>
 <div class="card">
     <div class="card-body">
+       
         <div class="card-title">
             <p><%= product.name %></p>
         </div>
         <div class="card-text">
-            <p><small>SGD</small> <%= product.price %> </p>
+            <p><small>SGD</small> <%= number_to_currency(product.price) %> </p>
         </div>
         <div class="card-footer">
             <%= link_to 'View Product', product_path(product) %>
