@@ -14,7 +14,7 @@ class Admin::ProductsController < ApplicationController
       @product = Product.new(product_params)
 
       if @product.save
-        ProductMailer.with(admin: current_admin, product: @product).product_created.deliver_later
+        ProductMailer.with(user: current_user, product: @product).product_created.deliver_later
         @category_array = params.dig(:product, :category_ids)
         @category_array.each do |cat|
           @category = Category.find(cat)

@@ -6,6 +6,8 @@ class ProductMailer < ApplicationMailer
   #   en.product_mailer.product_created.subject
   #
   def product_created
+    @user = params[:user]
+    @product = params[:product]
     @greeting = "Hi"
 
     mail(
