@@ -9,16 +9,17 @@
                 <%= product.description %>
             </p>
             <p>
+                <% if product.avatar? %>
+                <%= image_tag product.avatar.url %>
+                <% end %>
+            </p>
+            <p>
                 <small> SGD</small>
                 <%= number_to_currency(product.price) %>
             </p>
         </div>
         <%= link_to 'Add to Cart', add_to_cart_path(@product), method: :put %>
-        <div class="card-footer">
-            <% product.avatar.each do |file| %>
-                <%= image_tag(product.avatar) %>
-            <% end %>
-        </div>
+        
     </div>
 </div>
 <% end %>

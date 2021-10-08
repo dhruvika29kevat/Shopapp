@@ -12,7 +12,6 @@ class Admin::ProductsController < ApplicationController
   
     def create
       @product = Product.new(product_params)
-      @product.avatar.attach(params[:avatar])
 
       if @product.save
         @category_array = params.dig(:product, :category_ids)

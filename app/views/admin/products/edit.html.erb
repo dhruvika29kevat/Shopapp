@@ -4,7 +4,9 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :price %>
-        <%= f.file_field :avatar %>
+        <div>
+            <%= f.file_field :avatar %>
+        </div>
 
         <%= f.association :categories, collection: Category.all, as: :check_boxes, include_hidden: false %>
 

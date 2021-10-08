@@ -30,6 +30,7 @@ gem 'simple_form', '~> 5.1'
 gem 'redis', '~> 4.4'
 gem 'activestorage', '~> 6.1', '>= 6.1.4.1'
 gem 'pg_search', '~> 2.3', '>= 2.3.5'
+gem 'carrierwave', '~> 2.2', '>= 2.2.2'
 
 # gem for searching
 gem 'sunspot_rails', '~> 2.5'

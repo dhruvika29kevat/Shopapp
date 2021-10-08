@@ -9,7 +9,11 @@
     <td>
         <%= admin_product.price %>
     </td>
-    
+    <% if admin_product.avatar? %>
+    <td>
+        <%= image_tag(admin_product.avatar.url) %>
+    </td>
+    <% end %>
     <td>
         <%= link_to 'Edit', edit_admin_product_path(admin_product) %>
     </td>

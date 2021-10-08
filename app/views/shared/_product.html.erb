@@ -5,6 +5,11 @@
         <div class="card-title">
             <p><%= product.name %></p>
         </div>
+        <div>
+            <p>
+                <%= image_tag product.avatar.url if product.avatar_url%>
+            </p>
+        </div>
         <div class="card-text">
             <p><small>SGD</small> <%= number_to_currency(product.price) %> </p>
         </div>
