@@ -1,21 +1,14 @@
 <% @products.each do |product| %>
-<div class="card">
+<div class="card" style="width: 18rem;">
+    <%= image_tag product.avatar.url if product.avatar_url %>
     <div class="card-body">
-       
-        <div class="card-title">
-            <p><%= product.name %></p>
-        </div>
-        <div>
-            <p>
-                <%= image_tag product.avatar.url if product.avatar_url %>
-            </p>
-        </div>
-        <div class="card-text">
-            <p><small>SGD</small> <%= number_to_currency(product.price) %> </p>
-        </div>
-        <div class="card-footer">
-            <%= link_to 'View Product', product_path(product) %>
-        </div>
+      <h5 class="card-title">
+        <p><%= product.name %></p>
+      </h5>
+      <p class="card-text">
+        <%= number_to_currency(product.price) %>
+      </p>
+      <%= link_to 'View Product', product_path(product), class: "btn btn-primary" %>
     </div>
-</div>
+  </div>
 <% end %>

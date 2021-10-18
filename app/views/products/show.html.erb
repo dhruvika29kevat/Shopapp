@@ -1,26 +1,21 @@
 <% Product.all.each do |product| %>
-<div class="container">
-    <div class="card">
-        <div class="card-body">
-            <div style="text-decoration: underline;">
-                <p><%= product.name %></p>
-            </div>
-            <p>
-                <%= product.description %>
-            </p>
-            <p>
-                <% if product.avatar? %>
-                <%= image_tag product.avatar.url %>
-                <% end %>
-            </p>
-            <p>
-                <small> SGD</small>
-                <%= number_to_currency(product.price) %>
-            </p>
-        </div>
-        <%= link_to 'Add to Cart', add_to_cart_path(@product), method: :put %>
-        
+<div class="card" style="width: 18rem;">
+    <% if product.avatar? %>
+        <%= image_tag product.avatar.url %>
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"> 
+        <p><%= product.name %></p>
+      </h5>
+      <p class="card-text">
+        <%= product.description %>
+      </p>
+      <p class="card-text">
+        <small> SGD</small>
+        <%= number_to_currency(product.price) %>
+      </p>
+      <%= link_to 'Add to Cart', add_to_cart_path(@product), method: :put, class: "btn btn-primary" %>
     </div>
-</div>
+  </div>
 <% end %>
 <%= link_to 'Back to Product List', products_path %>
