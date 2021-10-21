@@ -31,7 +31,6 @@ gem 'redis', '~> 4.4'
 gem 'activestorage', '~> 6.1', '>= 6.1.4.1'
 gem 'pg_search', '~> 2.3', '>= 2.3.5'
 gem 'carrierwave', '~> 2.2', '>= 2.2.2'
-
 # gem for searching
 gem 'sunspot_rails', '~> 2.5'
 group :test, :development do
@@ -60,6 +59,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'pry', '~> 0.14.1'
 end
 
 group :test do

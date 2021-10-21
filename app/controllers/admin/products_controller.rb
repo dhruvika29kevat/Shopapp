@@ -1,9 +1,20 @@
 class Admin::ProductsController < ApplicationController
 
     before_action :authenticate_admin!
-    
+    respond_to :html, :json
+
     def index
       @products = Product.all
+      # respond_to do |format|
+      #   format.html
+      #   binding.pry
+      #   format.csv { send_data @products.to_csv(['title', 'description', 'price']) }
+      # end
+    end
+
+    def import
+      Product.import(params[:file])
+      redirect_to root_path, notice: "Products imported." 
     end
   
     def new

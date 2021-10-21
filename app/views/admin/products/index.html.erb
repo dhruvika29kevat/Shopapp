@@ -1,5 +1,14 @@
 <h1>Admin Products</h1>
 <div class="container">
+    <%= form_tag import_admin_products_path, multipart: true, class: 'form-inline' do %>
+    <div class="form-group">
+      <%= file_field_tag :file, class: 'form-text' %>
+    </div>
+    
+    <div class="form-group">
+      <%= submit_tag "Import CSV", class: 'btn btn-info' %>
+    </div>
+    <% end %>   
     <div class="row">
         <%= link_to 'Add Product', new_admin_product_path %>
         <div class="col-12 card">
